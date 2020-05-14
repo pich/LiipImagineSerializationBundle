@@ -201,10 +201,10 @@ class JmsSerializeListenerAbstract
     {
         /** @var UrlNormalizerEvent $event */
         $event = $this->eventDispatcher->dispatch(
+            new UrlNormalizerEvent($url),
             $type === UrlNormalizerInterface::TYPE_ORIGIN
                 ? UrlNormalizerEvent::ORIGIN
-                : UrlNormalizerEvent::FILTERED,
-            new UrlNormalizerEvent($url)
+                : UrlNormalizerEvent::FILTERED
         );
 
         return $event->getUrl();

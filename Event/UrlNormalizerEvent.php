@@ -2,7 +2,7 @@
 
 namespace Bukashk0zzz\LiipImagineSerializationBundle\Event;
 
-use Symfony\Component\EventDispatcher\Event;
+use Symfony\Contracts\EventDispatcher\Event;
 
 /**
  * UrlNormalizerEvent
