@@ -8,7 +8,6 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/Bukashk0zzz/liip-imagine-serialization-bundle.svg?style=flat-square)](https://packagist.org/packages/Bukashk0zzz/liip-imagine-serialization-bundle)
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/01074784-ea2d-4902-8a62-53a5f743bc6f/small.png)](https://insight.sensiolabs.com/projects/01074784-ea2d-4902-8a62-53a5f743bc6f)
-[![knpbundles.com](http://knpbundles.com/Bukashk0zzz/LiipImagineSerializationBundle/badge-short)](http://knpbundles.com/Bukashk0zzz/LiipImagineSerializationBundle)
 
 About
 -----
