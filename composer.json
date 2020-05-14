@@ -26,8 +26,6 @@
         "vich/uploader-bundle": "^1.5"
     },
     "require-dev": {
-        "escapestudios/symfony2-coding-standard": "^3.0",
-        "slevomat/coding-standard": "^4.0",
         "friendsofphp/php-cs-fixer": "^2.8",
         "phpunit/phpunit": "^6.4"
     },

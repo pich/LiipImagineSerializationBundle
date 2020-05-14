@@ -91,6 +91,7 @@ class User
 
     /**
      * User constructor.
+     *
      * @param null $photoName
      */
     public function __construct($photoName = null)
@@ -106,8 +107,6 @@ class User
 
     /**
      * To string
-     *
-     * @return string
      */
     public function __toString(): string
     {
@@ -128,8 +127,6 @@ class User
      * Set photo name
      *
      * @param string $photoName Photo name
-     *
-     * @return User
      */
     public function setPhotoName(string $photoName): User
     {
@@ -152,8 +149,6 @@ class User
      * Set photo file
      *
      * @param File $photoFile Photo file
-     *
-     * @return User
      */
     public function setPhotoFile(File $photoFile): User
     {
@@ -164,10 +159,6 @@ class User
 
     /**
      * Add userPictures
-     *
-     * @param UserPictures $userPictures
-     *
-     * @return User
      */
     public function addUserPictures(UserPictures $userPictures): User
     {
@@ -178,8 +169,6 @@ class User
 
     /**
      * Get userPictures
-     *
-     * @return \Doctrine\Common\Collections\Collection
      */
     public function getUserPictures(): Collection
     {
@@ -188,10 +177,6 @@ class User
 
     /**
      * Add userPhotos
-     *
-     * @param UserPhotos $userPhotos
-     *
-     * @return User
      */
     public function addUserPhotos(UserPhotos $userPhotos): User
     {
@@ -202,27 +187,17 @@ class User
 
     /**
      * Get userPhotos
-     *
-     * @return \Doctrine\Common\Collections\Collection
      */
     public function getUserPhotos(): Collection
     {
         return $this->userPhotos;
     }
 
-    /**
-     * @return string
-     */
     public function getCoverUrl(): string
     {
         return $this->coverUrl;
     }
 
-    /**
-     * @param string $coverUrl
-     *
-     * @return User
-     */
     public function setCoverUrl(string $coverUrl): User
     {
         $this->coverUrl = $coverUrl;
@@ -230,19 +205,11 @@ class User
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getImageUrl(): string
     {
         return $this->imageUrl;
     }
 
-    /**
-     * @param string $imageUrl
-     *
-     * @return User
-     */
     public function setImageUrl(string $imageUrl): User
     {
         $this->imageUrl = $imageUrl;

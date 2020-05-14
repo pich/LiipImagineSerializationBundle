@@ -1,4 +1,5 @@
 <?php declare(strict_types = 1);
+
 /*
  * This file is part of the Bukashk0zzzLiipImagineSerializationBundle
  *
@@ -22,9 +23,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  *
  * @ORM\Table(name="userPictures")
  * @ORM\Entity()
- *
  * @JMS\ExclusionPolicy("all")
- *
  * @Vich\Uploadable()
  * @Bukashk0zzz\LiipImagineSerializableClass()
  */
@@ -32,52 +31,40 @@ class UserPictures implements Proxy
 {
     /**
      * @var string Cover url
-     *
      * @ORM\Column(type="string", length=255)
-     *
      * @JMS\Expose()
      * @JMS\SerializedName("cover")
-     *
      * @Bukashk0zzz\LiipImagineSerializableField(filter={"big", "small"})
      */
     public $coverUrl;
 
     /**
      * @var string Image url
-     *
      * @ORM\Column(type="string", length=255)
-     *
      * @JMS\Expose()
      * @JMS\SerializedName("image")
-     *
      * @Bukashk0zzz\LiipImagineSerializableField(filter="thumb_filter", virtualField="image_thumb")
      */
     public $imageUrl;
 
     /**
      * @var string Photo name
-     *
      * @ORM\Column(type="string", length=255)
-     *
      * @JMS\Expose()
      * @JMS\SerializedName("photo")
-     *
      * @Bukashk0zzz\LiipImagineSerializableField(filter="thumb_filter", vichUploaderField="photoFile", virtualField="photoThumb")
      */
     public $photoName;
 
     /**
      * @var File Photo file
-     *
      * @JMS\Exclude()
-     *
      * @Vich\UploadableField(mapping="user_photo_mapping", fileNameProperty="photoName")
      */
     public $photoFile;
 
     /**
      * @var User
-     *
      * @ORM\ManyToOne(targetEntity="Bukashk0zzz\LiipImagineSerializationBundle\Tests\Fixtures\User", inversedBy="pictures")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
@@ -85,14 +72,11 @@ class UserPictures implements Proxy
 
     /**
      * @var int
-     *
      * @ORM\Column(type="integer")
      */
     protected $userId;
 
-    /**
-     * @var bool
-     */
+    /** @var bool */
     private $status = false;
 
     // @codingStandardsIgnoreStart
@@ -121,8 +105,6 @@ class UserPictures implements Proxy
 
     /**
      * To string
-     *
-     * @return string
      */
     public function __toString(): string
     {
@@ -131,10 +113,6 @@ class UserPictures implements Proxy
 
     /**
      * Set userId
-     *
-     * @param int $userId
-     *
-     * @return UserPictures
      */
     public function setUserId(int $userId): UserPictures
     {
@@ -145,8 +123,6 @@ class UserPictures implements Proxy
 
     /**
      * Get userId
-     *
-     * @return int
      */
     public function getUserId(): int
     {
@@ -157,8 +133,6 @@ class UserPictures implements Proxy
      * Set user
      *
      * @param User $user
-     *
-     * @return UserPictures
      */
     public function setUser(?User $user = null): UserPictures
     {
@@ -169,27 +143,17 @@ class UserPictures implements Proxy
 
     /**
      * Get user
-     *
-     * @return User
      */
     public function getUser(): User
     {
         return $this->user;
     }
 
-    /**
-     * @return string
-     */
     public function getCoverUrl(): string
     {
         return $this->coverUrl;
     }
 
-    /**
-     * @param string $coverUrl
-     *
-     * @return UserPictures
-     */
     public function setCoverUrl(string $coverUrl): UserPictures
     {
         $this->coverUrl = $coverUrl;
@@ -197,19 +161,11 @@ class UserPictures implements Proxy
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getImageUrl(): string
     {
         return $this->imageUrl;
     }
 
-    /**
-     * @param string $imageUrl
-     *
-     * @return UserPictures
-     */
     public function setImageUrl(string $imageUrl): UserPictures
     {
         $this->imageUrl = $imageUrl;
@@ -227,8 +183,6 @@ class UserPictures implements Proxy
 
     /**
      * @param mixed $photoName
-     *
-     * @return UserPictures
      */
     public function setPhotoName($photoName): UserPictures
     {
@@ -237,19 +191,11 @@ class UserPictures implements Proxy
         return $this;
     }
 
-    /**
-     * @return File
-     */
     public function getPhotoFile(): File
     {
         return $this->photoFile;
     }
 
-    /**
-     * @param File $photoFile
-     *
-     * @return UserPictures
-     */
     public function setPhotoFile(File $photoFile): UserPictures
     {
         $this->photoFile = $photoFile;

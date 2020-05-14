@@ -10,10 +10,5 @@ interface UrlNormalizerInterface
     public const TYPE_ORIGIN = 'originUrlNormalizer';
     public const TYPE_FILTERED = 'filteredUrlNormalizer';
 
-    /**
-     * @param string|null $url
-     *
-     * @return string
-     */
     public function normalize(?string $url): string;
 }

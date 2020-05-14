@@ -29,8 +29,6 @@ class JmsSerializeContextGenerator
 {
     /**
      * Generate JMS context
-     *
-     * @return DeserializationContext
      */
     public function generateContext(): DeserializationContext
     {

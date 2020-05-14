@@ -21,8 +21,6 @@ class Configuration implements ConfigurationInterface
 {
     /**
      * Generates the configuration tree.
-     *
-     * @return \Symfony\Component\Config\Definition\Builder\NodeParentInterface
      */
     public function getConfigTreeBuilder(): NodeParentInterface
     {

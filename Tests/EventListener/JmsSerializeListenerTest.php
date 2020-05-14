@@ -418,10 +418,6 @@ class JmsSerializeListenerTest extends TestCase
         return \json_decode($result, true);
     }
 
-    /**
-     * @param bool $https
-     * @param bool $port
-     */
     protected function generateRequestContext(bool $https = false, bool $port = false): void
     {
         $this->requestContext = $this->getMockBuilder(RequestContext::class)
@@ -455,9 +451,6 @@ class JmsSerializeListenerTest extends TestCase
 
     /**
      * Prepare mock of Liip cache manager
-     *
-     * @param string $urlPrefix
-     * @param bool   $isStored
      */
     protected function generateCacheManager(string $urlPrefix = 'http://example.com:8800/', bool $isStored = true): void
     {
@@ -465,7 +458,7 @@ class JmsSerializeListenerTest extends TestCase
         $resolver
             ->expects(static::any())
             ->method('isStored')
-            ->will(static::returnValue($isStored))
+            ->willReturn($isStored)
         ;
         $resolver
             ->expects(static::any())
@@ -485,11 +478,11 @@ class JmsSerializeListenerTest extends TestCase
         $config = $this->getMockBuilder(FilterConfiguration::class)->getMock();
         $config->expects(static::any())
             ->method('get')
-            ->will(static::returnValue([
+            ->willReturn([
                 'size' => [180, 180],
                 'mode' => 'outbound',
                 'cache' => null,
-            ]))
+            ])
         ;
 
         $router = $this->getMockBuilder(RouterInterface::class)->getMock();
