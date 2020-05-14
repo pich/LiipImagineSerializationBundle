@@ -78,8 +78,6 @@ final class LiipImagineSerializableField implements Annotation
 
     /**
      * @param string|string[] $filter
-     *
-     * @return LiipImagineSerializableField
      */
     public function setFilter($filter): LiipImagineSerializableField
     {
@@ -88,19 +86,11 @@ final class LiipImagineSerializableField implements Annotation
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getVichUploaderField(): ?string
     {
         return $this->vichUploaderField;
     }
 
-    /**
-     * @param string $vichUploaderField
-     *
-     * @return LiipImagineSerializableField
-     */
     public function setVichUploaderField(string $vichUploaderField): LiipImagineSerializableField
     {
         $this->vichUploaderField = $vichUploaderField;
@@ -108,19 +98,11 @@ final class LiipImagineSerializableField implements Annotation
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getVirtualField(): ?string
     {
         return $this->virtualField;
     }
 
-    /**
-     * @param string $virtualField
-     *
-     * @return LiipImagineSerializableField
-     */
     public function setVirtualField(string $virtualField): LiipImagineSerializableField
     {
         $this->virtualField = $virtualField;
@@ -128,12 +110,6 @@ final class LiipImagineSerializableField implements Annotation
         return $this;
     }
 
-    /**
-     * @param string $optionName
-     * @param bool   $canBeArray
-     *
-     * @return bool
-     */
     private function checkOption(string $optionName, bool $canBeArray): bool
     {
         if (\array_key_exists($optionName, $this->options)) {

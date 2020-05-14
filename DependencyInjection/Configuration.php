@@ -21,13 +21,14 @@ class Configuration implements ConfigurationInterface
 {
     /**
      * Generates the configuration tree.
-     *
-     * @return \Symfony\Component\Config\Definition\Builder\NodeParentInterface
      */
     public function getConfigTreeBuilder(): NodeParentInterface
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('bukashk0zzz_liip_imagine_serialization');
+        $treeBuilder = new TreeBuilder('bukashk0zzz_liip_imagine_serialization');
+
+        $rootNode = \method_exists($treeBuilder, 'getRootNode')
+            ? $treeBuilder->getRootNode()
+            : $treeBuilder->root('bukashk0zzz_liip_imagine_serialization');
 
         $rootNode
             ->children()

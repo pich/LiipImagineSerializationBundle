@@ -58,10 +58,6 @@ class JmsSerializeEventsManager
 
     /**
      * Add post & pre serialize event listeners
-     *
-     * @param RequestContext   $requestContext
-     * @param CacheManager     $cacheManager
-     * @param StorageInterface $vichStorage
      */
     public function addEventListeners(RequestContext $requestContext, CacheManager $cacheManager, StorageInterface $vichStorage): void
     {
@@ -70,10 +66,7 @@ class JmsSerializeEventsManager
     }
 
     /**
-     * @param DeserializationContext $context
-     * @param User|UserPictures      $user
-     *
-     * @return ObjectEvent
+     * @param User|UserPictures $user
      */
     public function dispatchEvents(DeserializationContext $context, $user): ObjectEvent
     {
@@ -88,11 +81,7 @@ class JmsSerializeEventsManager
     /** @noinspection MoreThanThreeArgumentsInspection
      * Add post & pre serialize event to dispatcher
      *
-     * @param EventDispatcher  $dispatcher
-     * @param RequestContext   $requestContext
-     * @param CacheManager     $cacheManager
-     * @param StorageInterface $vichStorage
-     * @param mixed[]          $config         JMS serializer listner config
+     * @param mixed[] $config JMS serializer listner config
      */
     public function addEvents(EventDispatcher $dispatcher, RequestContext $requestContext, CacheManager $cacheManager, StorageInterface $vichStorage, array $config = []): void
     {

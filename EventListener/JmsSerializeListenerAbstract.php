@@ -59,12 +59,7 @@ class JmsSerializeListenerAbstract
     /**
      * JmsSerializeListenerAbstract constructor.
      *
-     * @param RequestContext           $requestContext
-     * @param CachedReader             $annotationReader
-     * @param CacheManager             $cacheManager
-     * @param StorageInterface         $vichStorage
-     * @param EventDispatcherInterface $eventDispatcher
-     * @param mixed[]                  $config
+     * @param mixed[] $config
      */
     public function __construct(
         RequestContext $requestContext,
@@ -101,9 +96,8 @@ class JmsSerializeListenerAbstract
     }
 
     /**
-     * @param LiipImagineSerializableField $liipAnnotation
-     * @param mixed                        $object         Serialized object
-     * @param string                       $value          Value of field
+     * @param mixed  $object Serialized object
+     * @param string $value  Value of field
      *
      * @return mixed[]|string
      */
@@ -162,11 +156,6 @@ class JmsSerializeListenerAbstract
 
     /**
      * Normalize url if needed
-     *
-     * @param string $url
-     * @param string $normalizer
-     *
-     * @return string
      */
     protected function normalizeUrl(string $url, string $normalizer): string
     {
@@ -185,10 +174,6 @@ class JmsSerializeListenerAbstract
 
     /**
      * If config demands, it will remove host and scheme (protocol) from passed url
-     *
-     * @param string $url
-     *
-     * @return string
      */
     private function prepareFilteredUrl(string $url): string
     {
@@ -201,10 +186,6 @@ class JmsSerializeListenerAbstract
 
     /**
      * Removes host and scheme (protocol) from passed url
-     *
-     * @param string $url
-     *
-     * @return string
      */
     private function stripHostFromUrl(string $url): string
     {
@@ -216,20 +197,14 @@ class JmsSerializeListenerAbstract
         throw new \InvalidArgumentException('Can\'t strip host from url, because can\'t parse url.');
     }
 
-    /**
-     * @param string $type
-     * @param string $url
-     *
-     * @return string
-     */
     private function addPreNormalizeUrlEvent(string $type, string $url): string
     {
         /** @var UrlNormalizerEvent $event */
         $event = $this->eventDispatcher->dispatch(
+            new UrlNormalizerEvent($url),
             $type === UrlNormalizerInterface::TYPE_ORIGIN
                 ? UrlNormalizerEvent::ORIGIN
-                : UrlNormalizerEvent::FILTERED,
-            new UrlNormalizerEvent($url)
+                : UrlNormalizerEvent::FILTERED
         );
 
         return $event->getUrl();

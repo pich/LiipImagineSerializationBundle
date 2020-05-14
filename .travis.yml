@@ -2,14 +2,15 @@ language: php
 sudo: false
 
 php:
-  - 7.1
+  - 7.2
+  - 7.4
 
 before_script:
   - composer self-update
   - composer install --dev --prefer-dist --no-interaction
 
 script:
-  - ./vendor/bin/phpcs ./ -p --standard=./ruleset.xml
+  - ./vendor/bin/php-cs-fixer fix --config=.php_cs -vvv --dry-run
   - ./vendor/bin/phpunit -c phpunit.xml.dist --coverage-clover=coverage.xml
 
 after_success:
