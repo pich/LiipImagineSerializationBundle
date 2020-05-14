@@ -524,8 +524,8 @@ class JmsSerializeListenerTest extends TestCase
         $this->vichStorage = $this->getMockBuilder(FileSystemStorage::class)
             ->disableOriginalConstructor()
             ->getMock();
-        $this->vichStorage->expects(static::any())
+        $this->vichStorage
             ->method('resolveUri')
-            ->will(static::returnValue('/uploads/photo.jpg'));
+            ->willReturn('/uploads/photo.jpg');
     }
 }

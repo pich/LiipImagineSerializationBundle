@@ -18,11 +18,11 @@
     },
     "require": {
         "php": ">=7.1.0",
-        "symfony/dependency-injection": "^3.3|^4.0",
-        "symfony/yaml": "^3.3|^4.0",
+        "symfony/dependency-injection": "^3.3|^4.0|^5.0",
+        "symfony/yaml": "^3.3|^4.0|^5.0",
         "doctrine/orm": "^2.5",
-        "jms/serializer-bundle": "^2.0",
-        "liip/imagine-bundle": "^1.8",
+        "jms/serializer-bundle": "^2.0|^3.0",
+        "liip/imagine-bundle": "^1.8|2.3",
         "vich/uploader-bundle": "^1.5"
     },
     "require-dev": {
